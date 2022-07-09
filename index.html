@@ -14,9 +14,8 @@
   <div class="instagram-wrapper">
     <div class="instagram-phone">
       <div>
-        <img src="./img/instagram-celular.png">
-        <img src="./img/instagram-celular2.png">
-        <img src="./img/instagram-celular3.png">
+        <img class="hide unhide" src="./img/instagram-celular.png">
+        <img class="hide" src="./img/instagram-celular2.png">
       </div>
     </div>
 
@@ -46,6 +45,25 @@
       </div>
     </div>
   </div>
+
+  <script>
+    var phoneImgs = document.querySelectorAll(".instagram-phone div img")
+    var current = 0
+
+    const changeImgs = setInterval(() => {
+      if (phoneImgs[phoneImgs.length - 1].classList.contains("unhide"))
+        phoneImgs[phoneImgs.length - 1].classList.remove("unhide")
+      if (phoneImgs[current - 1] && phoneImgs[current - 1].classList.contains("unhide"))
+        phoneImgs[current - 1].classList.remove("unhide")
+
+      phoneImgs[current].classList.add("unhide")
+
+      current++
+      if (current > phoneImgs.length - 1) {
+        current = 0
+      }
+    }, 2000);
+  </script>
 </body>
 
 </html>

@@ -149,10 +149,13 @@ body {
   background-image: url("./img/playstore-button.png");
 }
 
-.hidden {
+.hide {
   opacity: 0;
 }
-
+.unhide {
+  opacity: 1;
+  transition: opacity 0.4s;
+}
 /* media queries */
 
 @media (max-width: 1024px) {
